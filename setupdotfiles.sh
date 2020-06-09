@@ -1,9 +1,15 @@
 echo "Setting up environment"
 
+read -p "Do you have root access? [Y/n] " root
 read -p "Is rust already installed? [y/N] " rust
 
-echo "Installing packages"
-sudo apt install -y git zsh vim neofetch
+case $root in
+    [Nn]* ) ;;
+    [Yy]* | * )
+        echo "Installing packages"
+        sudo apt install -y git zsh vim neofetch
+    ;;
+esac
 
 echo "Setting up shell"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
