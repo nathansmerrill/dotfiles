@@ -27,7 +27,4 @@ case $rust in
 esac
 cargo install bat exa
 
-echo "Adding motd"
-sudo echo "neofetch" > /etc/profile.d/motd.sh
-
 echo "Setup complete! Log in again to see changes..."
