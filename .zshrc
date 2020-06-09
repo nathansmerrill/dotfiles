@@ -23,7 +23,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom
 
-export PATH="$HOME/.cargo/bin:/snap/bin:$PATH" 
+export PATH="$HOME/.cargo/bin:/snap/bin:$PATH"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
