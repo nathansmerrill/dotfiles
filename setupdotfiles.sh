@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Setting up environment"
 
 read -p "Do you have root access? [Y/n] " root
