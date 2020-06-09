@@ -1,5 +1,7 @@
 echo "Setting up environment"
 
+read -p "Is rust already installed? [Y/n] " rust
+
 echo "Installing packages"
 sudo apt install -y git zsh vim
 
@@ -20,5 +22,8 @@ vim +PlugInstall +qall
 
 echo "Installing rust"
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-curl https://sh.rustup.rs -sSf | sh -s -- -y
+case $rust in
+    [Nn]* ) ;;
+    [Yy]* | * ) curl https://sh.rustup.rs -sSf | sh -s -- -y
+esac
 cargo install bat exa
