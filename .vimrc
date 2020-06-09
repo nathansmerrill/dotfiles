@@ -28,10 +28,7 @@ call plug#end()
 set encoding=UTF-8
 set mouse=a
 
-let g:remotesession = ($SSH_TTY == "")
-if g:remotesession
-	let g:airline_powerline_fonts = 1
-endif
+let g:airline_powerline_fonts = 1
 
 "nmap <F6> :NERDTreeToggle<CR>
 nmap ff :NERDTreeToggle<CR>
