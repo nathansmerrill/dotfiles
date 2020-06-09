@@ -23,7 +23,7 @@ vim +PlugInstall +qall
 echo "Installing rust packages"
 case $rust in
     [Yy]* ) ;;
-    [Nn]* | * ) curl https://sh.rustup.rs -sSf | sh -s -- -y
+    [Nn]* | * ) curl https://sh.rustup.rs -sSf | sh -s -- -y ;;
 esac
 cargo install bat exa
 
