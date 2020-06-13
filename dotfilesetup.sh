@@ -2,16 +2,9 @@
 
 echo "Setting up environment"
 
-read -p "Do you have root access? [Y/n] " root
-read -p "Is rust already installed? [y/N] " rust
 
-case $root in
-    [Nn]* ) ;;
-    [Yy]* | * )
-        echo "Installing packages"
-        sudo apt install -y git zsh vim neofetch
-    ;;
-esac
+echo "Installing packages"
+sudo apt install -y git zsh vim neofetch
 
 echo "Setting up shell"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -29,10 +22,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 vim +PlugInstall +qall
 
 echo "Installing rust packages"
-case $rust in
-    [Yy]* ) ;;
-    [Nn]* | * ) curl https://sh.rustup.rs -sSf | sh -s -- -y ;;
-esac
+
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 cargo install bat exa
 
 echo "Setup complete! Log in again to see changes..."
