@@ -10,6 +10,7 @@ echo "Setting up shell"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+chsh -s $(which zsh)
 
 echo "Downloading dotfiles"
 curl -o ~/.zshrc https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.zshrc.remote
@@ -22,7 +23,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 vim +PlugInstall +qall
 
 echo "Installing rust packages"
-
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 cargo install bat exa
 
