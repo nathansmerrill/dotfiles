@@ -2,7 +2,6 @@
 
 echo "Setting up environment"
 
-
 echo "Installing packages"
 sudo apt install -y git zsh vim neofetch
 
