@@ -11,11 +11,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 chsh -s $(which zsh)
 
-echo "Downloading dotfiles"
-curl -o ~/.zshrc https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.zshrc.remote
-curl -o ~/.p10k.zsh https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.p10k.zsh
-curl -o ~/.vimrc https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.vimrc
-sed -i "s/<USERNAME>/$USER/" ~/.zshrc
+mkdir ~/bin
+curl -o ~/bin/dotfileupdate https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/dotfileupdate
+~/bin/dotfileupdate
 
 echo "Setting up vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
