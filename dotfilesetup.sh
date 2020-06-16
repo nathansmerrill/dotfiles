@@ -12,6 +12,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 mkdir ~/bin
 curl -o ~/bin/dotfileupdate https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/dotfileupdate
+chmod +x ~/bin/dotfileupdate
 ~/bin/dotfileupdate
 
 echo "Setting up vim"
