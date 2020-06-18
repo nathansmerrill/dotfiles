@@ -30,8 +30,8 @@ export EDITOR="/usr/bin/vim"
 
 alias ls="/opt/coreutils/bin/ls"
 alias l="ls"
-alias la="ls -a"
-alias ll="ls -l"
+alias la="ls -A"
+alias ll="ls -lh"
 alias lt="exa -T"
 
 alias ..="cd .."
@@ -55,6 +55,8 @@ alias python="python3"
 alias pip="pip3"
 alias password="python3 -c 'import os; print(os.urandom(24).hex())'"
 alias cm="python3 -m connectionmaster"
+
+alias live="less +F"
 
 alias my="mariadb"
 
