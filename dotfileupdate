@@ -1,5 +1,16 @@
+#!/bin/bash
+
 echo "Downloading dotfiles"
-curl -o ~/.zshrc https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.zshrc.remote?foo=$(date +%s)
-curl -o ~/.p10k.zsh https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.p10k.zsh?foo=$(date +%s)
-curl -o ~/.vimrc https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.vimrc?foo=$(date +%s)
+
+declare -A DOTFILES=(
+	[.zshrc]='.zshrc.remote'
+	[.p10k.zsh]='.p10k.zsh'
+	[.vimrc]='.vimrc'
+)
+
+for i in "${!DOTFILES[@]}"; do
+	echo "Downloading $i"
+	curl -o $i https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/${DOTFILES[$i]}?foo=$(date +%s)
+done
+
 sed -i "s/<USERNAME>/$USER/" ~/.zshrc
