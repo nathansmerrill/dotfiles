@@ -23,15 +23,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom
 
-export PATH="$HOME/.cargo/bin:/snap/bin:$HOME/bin:$PATH"
+export SPICETIFY_INSTALL="/home/nathan/spicetify-cli"
+export PATH="$HOME/.cargo/bin:/snap/bin:$SPICETIFY_INSTALL:$PATH" 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR="/usr/bin/vim"
-
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 
 alias ls="/opt/coreutils/bin/ls"
 alias l="ls"
@@ -42,6 +37,8 @@ alias lt="exa -T"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+alias sudo='sudo '
 
 alias ai="sudo apt install"
 alias ar="sudo apt remove"
@@ -55,6 +52,11 @@ alias cat="bat"
 alias e="exit"
 
 alias python="python3"
+alias pip="pip3"
+alias password="python3 -c 'import os; print(os.urandom(24).hex())'"
+alias cm="python3 -m connectionmaster"
+
+alias my="mariadb"
 
 alias open="google-chrome"
 
@@ -68,6 +70,16 @@ mkcd() {
 cl() {
 	cd $1
 	ls
+}
+
+template() {
+	if [ -z "$1" ]; then
+		echo 'Please enter a template name'
+	elif [ -z "$2" ]; then
+		cp -r ~/templates/$1 $1
+	else
+		cp -r ~/templates/$1 $2
+	fi
 }
 
 pypiu() {
@@ -102,3 +114,5 @@ ex ()
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval $(thefuck --alias)
