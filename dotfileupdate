@@ -1,5 +1,5 @@
 echo "Downloading dotfiles"
-curl -o ~/.zshrc https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.zshrc.remote
-curl -o ~/.p10k.zsh https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.p10k.zsh
-curl -o ~/.vimrc https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.vimrc
+curl -o ~/.zshrc https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.zshrc.remote?foo=$(date +%s)
+curl -o ~/.p10k.zsh https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.p10k.zsh?foo=$(date +%s)
+curl -o ~/.vimrc https://raw.githubusercontent.com/nathansmerrill/dotfiles/master/.vimrc?foo=$(date +%s)
 sed -i "s/<USERNAME>/$USER/" ~/.zshrc
