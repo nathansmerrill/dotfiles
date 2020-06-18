@@ -57,5 +57,5 @@ set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start
 
 syntax on		" Enable syntax-highlighting
+colorscheme onedark
 highlight Normal ctermbg=None "Force transparent background
-colorscheme onedark 
