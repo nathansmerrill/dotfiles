@@ -35,6 +35,8 @@ nmap ff :NERDTreeToggle<CR>
 nmap <C-_>   <Plug>NERDCommenterToggle
 imap ii <Esc>
 
+command! -nargs=0 Sw w !sudo tee % > /dev/null
+
 set number 		" Show line numbers
 set linebreak 		" Break lines at word (requires wrap lines)
 set showbreak=-> 	" Wrap-broken line prefix
