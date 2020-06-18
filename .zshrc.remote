@@ -32,8 +32,8 @@ export EDITOR="/usr/bin/vim"
 
 alias ls="exa"
 alias l="ls"
-alias la="ls -A"
-alias ll="ls -lh"
+alias la="ls -a"
+alias ll="ls -l"
 alias lt="ls -T"
 
 alias ..="cd .."
