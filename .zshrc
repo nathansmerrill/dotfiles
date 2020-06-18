@@ -75,10 +75,10 @@ cl() {
 template() {
 	if [ -z "$1" ]; then
 		echo 'Please enter a template name'
-	elif [ -z "$2" ]; then
-		cp -r ~/templates/$1 $1
-	else
+	elif [ -n "$2" ]; then
 		cp -r ~/templates/$1 $2
+	else
+		cp -r ~/templates/$1 $1
 	fi
 }
 
