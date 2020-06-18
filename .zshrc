@@ -25,6 +25,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.cargo/bin:/snap/bin:$HOME/bin:$PATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export EDITOR="/usr/bin/vim"
 
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -47,7 +48,7 @@ alias ar="sudo apt remove"
 alias au="sudo apt update"
 alias as="apt search"
 
-alias svim="sudo vim"
+alias svim="sudo -e"
 
 alias cat="bat"
 
