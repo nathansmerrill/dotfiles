@@ -1,4 +1,4 @@
-# dotfiles
+# Dotfiles
 A collection of my dotfiles
 
 ![Shell](assets/shell.png)
