@@ -32,8 +32,8 @@ export EDITOR="/usr/bin/vim"
 
 alias ls="exa"
 alias l="ls"
-alias la="ls -a"
-alias ll="ls -l"
+alias la="ls -A"
+alias ll="ls -lh"
 alias lt="ls -T"
 
 alias ..="cd .."
@@ -55,6 +55,8 @@ alias cat="bat"
 alias e="exit"
 
 alias python="python3"
+
+alias live="less +F"
 
 mkcd() {
 	mkdir $1
