@@ -56,6 +56,10 @@ alias e="exit"
 
 alias python="python3"
 
+alias password="python3 -c 'import os; print(os.urandom(24).hex())'"
+
+alias my="mariadb"
+
 alias live="less +F"
 
 mkcd() {
