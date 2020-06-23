@@ -2,8 +2,19 @@
 
 echo "Setting up environment"
 
+read -p "Install node? [Y/n] " node
+
 echo "Installing packages"
 sudo apt install -y build-essential git zsh vim neofetch
+
+case $node in
+  [Nn]* ) ;;
+  [Yy]* | * )
+    sudo apt install -y nodejs npm
+    sudo npm install -g n
+    n latest
+  ;;
+esac
 
 echo "Setting up shell"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
