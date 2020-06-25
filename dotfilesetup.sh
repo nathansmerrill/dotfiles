@@ -12,7 +12,7 @@ case $node in
   [Yy]* | * )
     sudo apt install -y nodejs npm
     sudo npm install -g n
-    n latest
+    sudo n latest
   ;;
 esac
 
